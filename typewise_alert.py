@@ -30,16 +30,14 @@ def check_and_alert(send_to_alertTarget, batteryChar, temperatureInC):
   return send_to_alertTarget(breachType)
 
 
-def send_to_alertTarget_stub(breachType):
-  return True
-
-
 def send_to_controller(breachType):
   header = 0xfeed
   print(f'{header}, {breachType}')
+  return True
 
 
 def send_to_email(breachType):
   recepient = "a.b@c.com"
   print(f'To: {recepient}')
   print(warning[breachType])
+  return True

@@ -14,7 +14,8 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(typewise_alert.classify_temperature_breach('MED_ACTIVE_COOLING', 50) == 'TOO_HIGH')
 
   def test_check_and_alert_temp_inc(self):
-    self.assertTrue(typewise_alert.check_and_alert(typewise_alert.send_to_alertTarget_stub,{'coolingType': 'PASSIVE_COOLING'},-20) == True)
+    self.assertTrue(typewise_alert.check_and_alert(typewise_alert.send_to_controller,{'coolingType': 'PASSIVE_COOLING'},30) == True)
+    self.assertTrue(typewise_alert.check_and_alert(typewise_alert.send_to_email,{'coolingType': 'HI_ACTIVE_COOLING'},-20) == True)
 
 
 if __name__ == '__main__':
