@@ -18,5 +18,5 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(typewise_alert.check_and_alert(typewise_alert.send_to_email,{'coolingType': 'HI_ACTIVE_COOLING'},-20) == True)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # pragma: no cover
   unittest.main()
